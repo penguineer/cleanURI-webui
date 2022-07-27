@@ -8,19 +8,28 @@
 The Web UI is based on [React](https://reactjs.org/) and requires [NodeJS](https://nodejs.org/en/) > 14.
 Debian packages can either be downloaded on the [NodeJS](https://nodejs.org/en/) website.
 
+
+### Run with npm
+
 In the project directory, you can run:
+```bash
+npm start
+```
 
-### `npm start`
-
-Runs the app in the development mode.\
+This runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### Run tests
 
-Launches the test runner in the interactive watch mode.\
+In the project directory, you can run:
+```bash
+npm test
+```
+
+This launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 
@@ -36,7 +45,12 @@ docker run --rm \
   mrtux/cleanuri-webui
 ```
 
-### `npm run build`
+### Build with npm
+
+In the project directory, you can run:
+```bash
+npm run build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
