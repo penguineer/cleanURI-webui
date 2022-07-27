@@ -26,6 +26,16 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Deployment
 
+### Run with Docker
+
+An HTTP daemon serving the static content can be run as follows:
+
+```bash
+docker run --rm \
+  -p 8080:80 \
+  mrtux/cleanuri-webui
+```
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
