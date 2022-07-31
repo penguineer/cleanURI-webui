@@ -1,8 +1,13 @@
 import './DecoratedList.css';
 import './DecoratedResult.css';
+import common_css from './common.css';
 
 import React from 'react';
 import DecoratedResult from './DecoratedResult';
+import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
+
+import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+github['hljs']['background'] = common_css['--result-background'];
 
 
 const hasCompleteContent = function(message) {
@@ -26,7 +31,7 @@ class DecoratedList extends React.Component {
             return null;
 
         return (
-            <a href={message['canonized-uri']} target='_blank'>{message['canonized-uri']}</a>
+            <a href={message['canonized-uri']} target='_blank' rel="noreferrer">{message['canonized-uri']}</a>
         );
     }
 
@@ -43,7 +48,7 @@ class DecoratedList extends React.Component {
             return null;
 
         return (
-            <div><a href={message['canonized-uri']} target='_blank'>{message.meta.id.value}</a> - {message.meta.title.value}</div>
+            <div><a href={message['canonized-uri']} target='_blank' rel="noreferrer">{message.meta.id.value}</a> - {message.meta.title.value}</div>
         )
     }    
 
@@ -53,7 +58,12 @@ class DecoratedList extends React.Component {
 
     renderJsonResultItem(message) {
         return (
-            <div>{JSON.stringify(message)}</div>
+            <SyntaxHighlighter
+                    language="json" 
+                    style={github}
+                    wrapLongLines={true}>
+               {JSON.stringify(message, null, 4)}
+            </SyntaxHighlighter>
         );
     }
     decorators = [
