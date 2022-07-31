@@ -1,0 +1,11 @@
+:root {
+    --meta-text-color: black;
+    --decoration-color: gray;
+    --activation-color: red;
+    --highlight-color: blue;
+    --backdrop: rgb(214, 213, 213);
+    --app-background: rgb(255, 255, 232);
+    --query-background: rgb(255, 242, 200);
+    --result-background: rgb(248, 250, 244);
+    --result-text-color: black;
+}
