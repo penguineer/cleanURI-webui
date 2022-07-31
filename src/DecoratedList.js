@@ -71,10 +71,11 @@ class DecoratedList extends React.Component {
             <ul>
                 {this.decorators.map((d) => {
                     const transformed = d[2](message);
-                    if (transformed) 
-                        return <li key={d[0]}><DecoratedResult content={d[1](message)} transformed={transformed}/></li>                
-                }
-                )}
+
+                    return transformed
+                        ? <li key={d[0]}><DecoratedResult content={d[1](message)} transformed={transformed}/></li>
+                        : null;
+                })}
             </ul>
         );
     }
