@@ -1,0 +1,60 @@
+@import "./common.css";
+
+div.input-form {
+    border: 1px solid var(--decoration-color);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 15px;
+    padding-bottom: 1em;
+    display: flex;
+    background-color: var(--query-background);
+}
+
+div.input-form:nth-last-child(2) {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 1em;
+}
+
+div.input-form form {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+div.input-form label {
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+    margin-right: 1em;
+    color: var(--meta-text-color);
+}
+
+div.input-form label::before {
+    content: "🔍";
+    padding-right: 5px;
+    color: var(--meta-text-color);
+}
+
+div.input-form input[type=text] {
+    flex-grow: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: large;
+}
+
+div.input-form input[type=submit] {
+    font-size: x-large;
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: var(--meta-text-color);
+}
