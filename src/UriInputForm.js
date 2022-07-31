@@ -1,3 +1,5 @@
+import './UriInputForm.css';
+
 import React from 'react';
 
 class UriInputForm extends React.Component {
@@ -21,11 +23,11 @@ class UriInputForm extends React.Component {
         const requestUri = this.props.requestUri;
 
         return (
-            <div>
+            <div className='input-form'>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="request-uri">URL:</label>
                     <input type="text" name="request-uri" value={requestUri} onChange={this.handleChange} />
-                    <input type="submit" value=">"/>
+                    <input type="submit" value="▶️"/>
                 </form>
             </div>
         )
