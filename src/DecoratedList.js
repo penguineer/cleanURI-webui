@@ -1,3 +1,6 @@
+import './DecoratedList.css';
+import './DecoratedResult.css';
+
 import React from 'react';
 import DecoratedResult from './DecoratedResult';
 
@@ -23,9 +26,7 @@ class DecoratedList extends React.Component {
             return null;
 
         return (
-            <div>
-                <a href={message['canonized-uri']}>{message['canonized-uri']}</a>
-            </div>
+            <a href={message['canonized-uri']} target='_blank'>{message['canonized-uri']}</a>
         );
     }
 
@@ -42,10 +43,7 @@ class DecoratedList extends React.Component {
             return null;
 
         return (
-            <div>
-                <div><a href={message['canonized-uri']}>{message.meta.id.value}</a> - {message.meta.title.value}</div>
-                <div>[[{message.meta.id.value}|{message['canonized-uri']}]] - {message.meta.title.value}</div>
-            </div>
+            <div><a href={message['canonized-uri']} target='_blank'>{message.meta.id.value}</a> - {message.meta.title.value}</div>
         )
     }    
 
@@ -59,21 +57,22 @@ class DecoratedList extends React.Component {
         );
     }
     decorators = [
-        ["plain", this.buildPlainResultContent, this.renderPlainResultItem],
-        ["dokuwiki", this.buildDokuwikiResultContent, this.renderDokuwikiResultItem],
-        ["json", this.buildJsonResultContent, this.renderJsonResultItem]
+        ["Plain Link", this.buildPlainResultContent, this.renderPlainResultItem, false],
+        ["Dokuwiki", this.buildDokuwikiResultContent, this.renderDokuwikiResultItem, true],
+        ["JSON", this.buildJsonResultContent, this.renderJsonResultItem, false]
     ];
 
     render() {
         const message = this.props.message;
 
         return !message ? null : (
-            <ul>
+            <ul className='DecoratedList'>
                 {this.decorators.map((d) => {
                     const transformed = d[2](message);
 
                     return transformed
-                        ? <li key={d[0]}><DecoratedResult content={d[1](message)} transformed={transformed}/></li>
+                        ? <li key={d[0]}><DecoratedResult title={d[0]} raw={d[1](message)} transformed={transformed}
+                                show_raw={d[3]}/></li>
                         : null;
                 })}
             </ul>

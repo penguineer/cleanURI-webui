@@ -1,0 +1,65 @@
+@import "./common.css";
+
+
+.DecoratedResult .header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+.DecoratedResult .header h3 {
+    white-space: nowrap;
+    width: 7em;
+    text-align: left;
+    margin: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 5px;
+    border-bottom-right-radius: 15px;
+    border-bottom: 1px solid var(--decoration-color);
+    border-right: 1px solid var(--decoration-color);
+    color: var(--meta-text-color);
+}
+
+.DecoratedResult .header h3::before {
+    content: "✅";
+    margin-right: 5px;
+}
+
+.DecoratedResult .header .clipboard {
+    flex: 0 1 0px;
+    text-align: right;
+    margin: 5px;
+    padding: 5px;
+}
+
+.clipboard {
+    white-space: nowrap;
+    transition: all 0.25s ease-out;
+    color: var(--meta-text-color);
+}
+
+.clipboard::before {
+    content: "📋";
+    margin-right: 5px;
+}
+
+.clipboard:hover {
+    color: var(--highlight-color);
+}
+.clipboard:active {
+    background-color: var(--activation-color);
+    transition: all 0s;
+    opacity: 1;
+}
+
+.DecoratedResult .result {
+    padding-left: 1em;
+    padding-right: 1em;
+    color: var(--result-text-color);
+}
+
+.DecoratedResult .result .raw {
+    padding-top: 1em;
+    font-family: monospace;
+}

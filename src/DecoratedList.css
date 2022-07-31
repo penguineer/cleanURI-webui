@@ -1,0 +1,21 @@
+@import "./common.css";
+
+ul.DecoratedList {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.DecoratedList li {
+    background-color: var(--result-background);
+    border: 1px solid var(--decoration-color);
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    text-align: left;
+}
+
+ul.DecoratedList li:nth-last-child(1) {
+    border-bottom-left-radius: 15px;;
+    border-bottom-right-radius: 15px;;
+    margin-bottom: 1em;
+}
