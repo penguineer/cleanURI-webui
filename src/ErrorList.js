@@ -6,7 +6,7 @@ class ErrorList extends React.Component {
     render() {
         const errors = this.props.errors;
 
-        return !errors ? null :
+        return (!errors || errors.length === 0) ? null :
         (
             <ul id="errors">
             {this.props.errors.map(
