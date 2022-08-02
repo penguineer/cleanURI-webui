@@ -35,6 +35,13 @@ class DecoratedList extends React.Component {
         );
     }
 
+    buildMarkdownResultContent(message) {
+        if (!hasCompleteContent(message)) 
+            return null;
+
+        return '['+message.meta.id.value+']('+message['canonized-uri']+') - '+message.meta.title.value;
+
+    }
 
     buildDokuwikiResultContent(message) {
         if (!hasCompleteContent(message)) 
@@ -68,6 +75,7 @@ class DecoratedList extends React.Component {
     }
     decorators = [
         ["Plain Link", this.buildPlainResultContent, this.renderPlainResultItem, false],
+        ["Markdown", this.buildMarkdownResultContent, this.renderDokuwikiResultItem, true],
         ["Dokuwiki", this.buildDokuwikiResultContent, this.renderDokuwikiResultItem, true],
         ["JSON", this.buildJsonResultContent, this.renderJsonResultItem, false]
     ];
