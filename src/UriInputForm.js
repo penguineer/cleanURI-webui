@@ -24,8 +24,11 @@ class UriInputForm extends React.Component {
 
         return (
             <div className='input-form'>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="request-uri">URL:</label>
+            <div>
+                <label htmlFor="request-uri">URL</label>
+                <span className='clipboard'>Copy from clipboard</span>
+            </div>
+            <form onSubmit={this.handleSubmit}>
                     <input type="text" name="request-uri" value={requestUri} onChange={this.handleChange} />
                     <input type="submit" value="▶️"/>
                 </form>
