@@ -9,3 +9,26 @@
     --result-background: rgb(248, 250, 244);
     --result-text-color: black;
 }
+
+
+.clipboard {
+    white-space: nowrap;
+    transition: all 0.25s ease-out;
+    color: var(--meta-text-color);
+    text-align: right;
+}
+
+.clipboard::after {
+    content: "📋";
+    margin-left: 5px;
+}
+
+.clipboard:hover {
+    color: var(--highlight-color);
+}
+
+.clipboard:active {
+    background-color: var(--activation-color);
+    transition: all 0s;
+    opacity: 1;
+}
