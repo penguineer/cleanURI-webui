@@ -9,7 +9,7 @@
 ## Development
 
 The Web UI is based on [React](https://reactjs.org/) and requires [NodeJS](https://nodejs.org/en/) > 14.
-Debian packages can either be downloaded on the [NodeJS](https://nodejs.org/en/) website.
+Debian packages can either be downloaded on the [NodeJS](https://nodejs.org/en/) website or are available from the backports repository.
 
 
 ### Run with npm
