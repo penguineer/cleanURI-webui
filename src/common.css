@@ -4,12 +4,13 @@
     --activation-color: red;
     --highlight-color: blue;
     --backdrop: rgb(214, 213, 213);
-    --app-background: rgb(255, 255, 232);
-    --query-background: rgb(255, 242, 200);
-    --result-background: rgb(248, 250, 244);
+    --app-header-background: rgb(202, 214, 225);
+    --app-background: rgb(165, 188, 207);
+    --query-background: rgb(250, 242, 222);
+    --result-background: rgb(232, 238, 223);
     --result-text-color: black;
-    --error-decoration-color: red;
-    --error-text-color: red;
+    --error-decoration-color: rgb(107, 5, 4);
+    --error-text-color: rgb(107, 5, 4);
     --error-background: rgb(255, 243, 243);
 }
 

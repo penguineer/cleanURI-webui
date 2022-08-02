@@ -1,3 +1,4 @@
+import './CleanUriForm.css';
 import React from 'react';
 import DecoratedList from './DecoratedList';
 import ErrorList from './ErrorList';
@@ -78,7 +79,7 @@ class CleanUriForm extends React.Component {
         const message = this.state.message;
         const errors = this.state.errors;
         return (
-            <div>
+            <div className="cleanUriForm">
                 <UriInputForm requestUri={this.state.requestUri} 
                               changeHandler= {this.onUriChange} 
                               submitHandler={this.onSubmit}/>
