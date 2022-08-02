@@ -38,6 +38,10 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Deployment
 
+The current version expects an [API Gateway](https://github.com/penguineer/cleanURI-apigateway) running at `localhost:8080`.
+This location will be part of the application configuration in future releases.
+
+
 ### Run with Docker
 
 An HTTP daemon serving the static content can be run as follows:
