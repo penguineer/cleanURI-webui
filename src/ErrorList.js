@@ -1,3 +1,5 @@
+import './ErrorList.css';
+
 import React from 'react';
 
 class ErrorList extends React.Component {
@@ -6,7 +8,7 @@ class ErrorList extends React.Component {
 
         return !errors ? null :
         (
-            <ul>
+            <ul id="errors">
             {this.props.errors.map(
                 (error, index) =>
                     <li key={index}>{error}</li>

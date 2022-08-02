@@ -8,6 +8,9 @@
     --query-background: rgb(255, 242, 200);
     --result-background: rgb(248, 250, 244);
     --result-text-color: black;
+    --error-decoration-color: red;
+    --error-text-color: red;
+    --error-background: rgb(255, 243, 243);
 }
 
 
