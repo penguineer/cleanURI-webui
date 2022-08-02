@@ -8,6 +8,7 @@ class UriInputForm extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.copyFromClipboard = this.copyFromClipboard.bind(this);
     }
 
     handleChange(e) {        
@@ -19,6 +20,13 @@ class UriInputForm extends React.Component {
         e.preventDefault();
     }
 
+    copyFromClipboard(e) {
+        navigator.clipboard.readText().then(
+            (clipText) =>   this.props.changeHandler(clipText)
+        )
+        e.preventDefault();
+    }
+
     render() {
         const requestUri = this.props.requestUri;
 
@@ -26,10 +34,10 @@ class UriInputForm extends React.Component {
             <div className='input-form'>
             <div>
                 <label htmlFor="request-uri">URL</label>
-                <span className='clipboard'>Copy from clipboard</span>
+                <span className='clipboard' onClick={this.copyFromClipboard}>Copy from clipboard</span>
             </div>
             <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="request-uri" value={requestUri} onChange={this.handleChange} />
+                    <input type="text" id="request-uri" name="request-uri" value={requestUri} onChange={this.handleChange} />
                     <input type="submit" value="▶️"/>
                 </form>
             </div>
