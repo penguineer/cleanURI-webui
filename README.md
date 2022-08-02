@@ -5,6 +5,7 @@
 
 > This is the Web UI for the [cleanURI](https://github.com/penguineer/cleanURI) service.
 
+![Partial screenshot of the Web UI](cleanURI-screenshot.png)
 
 ## Development
 
