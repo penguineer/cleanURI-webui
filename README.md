@@ -3,13 +3,14 @@
 ![NodeJS Test](https://github.com/penguineer/cleanURI-webui/actions/workflows/nodejs-test.yml/badge.svg)
 ![Docker Image](https://github.com/penguineer/cleanURI-webui/actions/workflows/docker-publish.yml/badge.svg)
 
-> This is the Web UI for the cleanURI service.
+> This is the Web UI for the [cleanURI](https://github.com/penguineer/cleanURI) service.
 
+![Partial screenshot of the Web UI](cleanURI-screenshot.png)
 
 ## Development
 
 The Web UI is based on [React](https://reactjs.org/) and requires [NodeJS](https://nodejs.org/en/) > 14.
-Debian packages can either be downloaded on the [NodeJS](https://nodejs.org/en/) website.
+Debian packages can either be downloaded on the [NodeJS](https://nodejs.org/en/) website or are available from the backports repository.
 
 
 ### Run with npm
@@ -37,6 +38,10 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 
 ## Deployment
+
+The current version expects an [API Gateway](https://github.com/penguineer/cleanURI-apigateway) running at `localhost:8080`.
+This location will be part of the application configuration in future releases.
+
 
 ### Run with Docker
 
