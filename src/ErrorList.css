@@ -1,0 +1,27 @@
+@import "./common.css";
+
+ul#errors {
+    background-color: var(--error-background);
+    border: 1px solid var(--error-decoration-color);
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+ul#errors li {
+    color: var(--error-text-color);
+    text-align: left;
+}
+
+ul#errors li::marker {
+    content: "❌ ";
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+ul#errors:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 1em;
+}

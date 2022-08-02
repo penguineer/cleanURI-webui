@@ -13,7 +13,7 @@ div.input-form {
     background-color: var(--query-background);
 }
 
-div.input-form:nth-last-child(2) {
+div.input-form:last-child {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-bottom: 1em;
