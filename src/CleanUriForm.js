@@ -24,8 +24,12 @@ class CleanUriForm extends React.Component {
         });
     }
 
-    onSubmit() {
-        const requestUri = this.state.requestUri;
+    onSubmit(uri) {
+        let requestUri = this.state.requestUri;
+        if (uri) {
+            requestUri = uri;
+            this.onUriChange(uri);
+        }
 
         const url = api + 'reduce?meta=IT&uri=' + encodeURIComponent(requestUri);
         fetch(url, {

@@ -8,9 +8,8 @@ div.input-form {
     margin-bottom: 2em;
     padding-left: 5px;
     padding-right: 5px;
-    padding-top: 15px;
+    padding-top: 5px;
     padding-bottom: 1em;
-    display: flex;
     background-color: var(--query-background);
 }
 
@@ -20,28 +19,45 @@ div.input-form:nth-last-child(2) {
     margin-bottom: 1em;
 }
 
-div.input-form form {
+div.input-form div {
     display: flex;
-    align-items: center;
-    flex-grow: 1;
     justify-content: space-between;
-    padding-left: 5px;
-    padding-right: 5px;
-    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 1em;
 }
 
-div.input-form label {
+div.input-form div label {
     font-size: large;
     font-weight: bold;
     text-align: left;
-    margin-right: 1em;
+    padding-bottom: 5px;
     color: var(--meta-text-color);
+    display: inline-block;
+    border-bottom-right-radius: 15px;
+    border-bottom: 1px solid var(--decoration-color);
+    border-right: 1px solid var(--decoration-color);
+    width: 8em;
+}
+
+div div span.clipboard {
+    display: inline-block;
 }
 
 div.input-form label::before {
     content: "🔍";
     padding-right: 5px;
     color: var(--meta-text-color);
+}
+
+div.input-form form {
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: middle;
 }
 
 div.input-form input[type=text] {
