@@ -8,7 +8,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 
-RUN npm ci
+RUN npm --no-audit --no-fund ci
 
 COPY . ./
 
