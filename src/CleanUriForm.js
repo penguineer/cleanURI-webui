@@ -37,42 +37,46 @@ class CleanUriForm extends React.Component {
             mode: 'cors'
         })
         .then(
-            (response) => {
-                let errors = []
-                if (response.ok) {
-                    response.json().then(
-                        (result) => {
+            (response) => 
+                response.ok 
+                ?   response.json().then(
+                        (result) => 
                             this.setState({
-                                message: result
-                            });
-                            if (result.errors) 
-                                result.errors.map((e) => errors.push(e));
-                        },
-                        (error) => {
-                            if (error)
-                                errors.push(error);
-                        }
-                    );
-                } else {
-                    response.json().then(
+                                message: result,
+                                errors: result.errors ? result.errors : []
+                            }),
+                        (error) => 
+                            this.setState({
+                                message: undefined,
+                                errors: [error]
+                            })
+                    )
+                :   response.json().then(
                         (result) => {
+                            let errors = []
                             if (result.message)
                                 errors.push(result.message)
                             if (result._embedded && result._embedded.errors)
                             result._embedded.errors.map((e) => errors.push(e.message));
+                            this.setState({
+                                message: undefined,
+                                errors: errors
+                            })
                         },
-                        (error) => {
-                            if (error)
-                                errors.push(error);
-                        }
+                        (error) => 
+                            this.setState({
+                                message: undefined,
+                                errors: [error]
+                            })
+                    )              
             
-                    );
-                }
-                if (errors) 
-                this.setState({
-                    errors: errors
-                });
-            });
+        )                        
+        .catch((error) => 
+            this.setState({
+                message: undefined,
+                errors: [error.message]
+            })
+        );
     }
 
     render() {
