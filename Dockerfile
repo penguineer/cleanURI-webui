@@ -17,6 +17,11 @@ RUN npm run build
 
 # production environment
 FROM nginx:1.23.1-alpine
+RUN apk add --no-cache jq
+
+COPY docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+ENV INDEX /usr/share/nginx/html/index.html
 
 COPY --from=build /app/build /usr/share/nginx/html
 

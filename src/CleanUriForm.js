@@ -4,7 +4,16 @@ import DecoratedList from './DecoratedList';
 import ErrorList from './ErrorList';
 import UriInputForm from './UriInputForm';
 
-const api = "http://localhost:8080/"
+
+const getApiGateway = function() {
+    const default_api = "http://localhost:8080/"
+
+    return (
+        window.ENV && window.ENV.REACT_APP_API_GATEWAY 
+        ? window.ENV.REACT_APP_API_GATEWAY + "/"
+        : default_api
+    );
+}
 
 class CleanUriForm extends React.Component {
     constructor(props) {
@@ -32,7 +41,7 @@ class CleanUriForm extends React.Component {
             this.onUriChange(uri);
         }
 
-        const url = api + 'reduce?meta=IT&uri=' + encodeURIComponent(requestUri);
+        const url = getApiGateway() + 'reduce?meta=IT&uri=' + encodeURIComponent(requestUri);
         fetch(url, {
             mode: 'cors'
         })

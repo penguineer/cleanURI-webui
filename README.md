@@ -7,6 +7,16 @@
 
 ![Partial screenshot of the Web UI](cleanURI-screenshot.png)
 
+
+## Configuration
+
+The Docker container can be configured using environment variables:
+
+* `REACT_APP_API_GATEWAY`: URL to the API Gateway (default: `http://localhost:8080`)
+
+Please note that this configuration is not available when the app is run locally. In this case configuration variables will have their default values.
+
+
 ## Development
 
 The Web UI is based on [React](https://reactjs.org/) and requires [NodeJS](https://nodejs.org/en/) > 14.
@@ -49,9 +59,12 @@ An HTTP daemon serving the static content can be run as follows:
 
 ```bash
 docker run --rm \
+  -e REACT_APP_API_GATEWAY="api gateway uri" \
   -p 8080:80 \
   mrtux/cleanuri-webui
 ```
+
+Note that the default API gateway points at `http://localhost:8080/` and therefore will not be available in the Docker container. Please don't forget to set a working URL for the API Gateway here.
 
 ### Build with npm
 
