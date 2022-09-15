@@ -3,9 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GitHubForkRibbon from 'react-github-fork-ribbon';
+
+const GitHubForkRibbon = () => (
+  <GitHubForkRibbon href="https://github.com/penguineer/cleanURI-webui"
+                    target="_blank"
+                    position="right"
+                    color="green">
+    Fork me on GitHub
+  </GitHubForkRibbon>
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <GitHubForkRibbon />,
   <React.StrictMode>
     <App />
   </React.StrictMode>
