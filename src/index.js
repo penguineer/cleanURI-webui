@@ -12,7 +12,7 @@ root.render(
     <GitHubForkRibbon href="https://github.com/penguineer/cleanURI"
 		      target="_blank"
                       position="right"
-                      color="green">
+                      color="orange">
       Fork me on GitHub
     </GitHubForkRibbon>
     <App />
