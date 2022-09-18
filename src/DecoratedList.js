@@ -5,7 +5,7 @@ import common_css from './common.css';
 import React from 'react';
 import DecoratedResult from './DecoratedResult';
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
-
+import json from 'react-syntax-highlighter/dist/esm/languages/hljs/json';
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 github['hljs']['background'] = common_css['--result-background'];
 
@@ -64,6 +64,7 @@ class DecoratedList extends React.Component {
     } 
 
     renderJsonResultItem(message) {
+        SyntaxHighlighter.registerLanguage('json', json);
         return (
             <SyntaxHighlighter
                     language="json" 
