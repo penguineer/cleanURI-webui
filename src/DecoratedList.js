@@ -83,16 +83,21 @@ class DecoratedList extends React.Component {
 
     render() {
         const message = this.props.message;
+        const hasErrors = this.props.hasErrors;
 
         return !message ? null : (
             <ul className='DecoratedList'>
                 {this.decorators.map((d) => {
                     const transformed = d[2](message);
 
-                    return transformed
-                        ? <li key={d[0]}><DecoratedResult title={d[0]} raw={d[1](message)} transformed={transformed}
-                                show_raw={d[3]}/></li>
-                        : null;
+                    if (!transformed) {
+                        return null;
+                    }
+                    
+                    let el = <li key={d[0]} className={hasErrors ? 'error' : ''}><DecoratedResult title={d[0]} raw={d[1](message)} transformed={transformed} 
+                    show_raw={d[3]}/></li>;
+
+                    return el;
                 })}
             </ul>
         );

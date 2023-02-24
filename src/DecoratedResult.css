@@ -26,6 +26,11 @@
     margin-right: 5px;
 }
 
+li.error .DecoratedResult .header h3::before {
+    content: "❌";
+    margin-right: 5px;
+}
+
 .DecoratedResult .header .clipboard {
     margin: 5px;
     padding: 5px;
