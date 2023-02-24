@@ -97,7 +97,7 @@ class CleanUriForm extends React.Component {
                               changeHandler= {this.onUriChange} 
                               submitHandler={this.onSubmit}/>
                 <ErrorList errors={errors}/>
-                <DecoratedList message={message} />                
+                <DecoratedList message={message} hasErrors={errors.length>0} />                
             </div>
         )
     }
