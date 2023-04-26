@@ -1,0 +1,23 @@
+name: Test and Publish
+
+on:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  call-nodejs-test:
+    uses: ./.github/workflows/nodejs-test.yml
+
+  call-docker-publish:
+    uses: ./.github/workflows/docker-publish.yml
+    needs:
+      - call-nodejs-test
+    with:
+      image: mrtux/cleanuri-webui
+    secrets: inherit
