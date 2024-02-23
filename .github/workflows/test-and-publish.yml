@@ -20,4 +20,7 @@ jobs:
       - call-nodejs-test
     with:
       image: mrtux/cleanuri-webui
-    secrets: inherit
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
