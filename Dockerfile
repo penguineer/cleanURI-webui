@@ -1,9 +1,9 @@
 # build environment
-FROM node:22.14.0-alpine3.21 as build
+FROM node:22.14.0-alpine3.21 AS build
 
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH=/app/node_modules/.bin:$PATH
 
 COPY package.json ./
 COPY package-lock.json ./
@@ -21,7 +21,7 @@ RUN apk add --no-cache jq
 
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
-ENV INDEX /usr/share/nginx/html/index.html
+ENV INDEX=/usr/share/nginx/html/index.html
 
 COPY --from=build /app/build /usr/share/nginx/html
 
