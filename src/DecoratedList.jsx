@@ -1,6 +1,6 @@
 import './DecoratedList.css';
 import './DecoratedResult.css';
-import common_css from './common.css';
+import './common.css';
 
 import React from 'react';
 import DecoratedResult from './DecoratedResult';
