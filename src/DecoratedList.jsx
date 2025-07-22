@@ -7,7 +7,6 @@ import DecoratedResult from './DecoratedResult';
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
 import json from 'react-syntax-highlighter/dist/esm/languages/hljs/json';
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-github['hljs']['background'] = common_css['--result-background'];
 
 
 const hasCompleteContent = function(message) {
