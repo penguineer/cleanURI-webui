@@ -1,13 +1,12 @@
 import './DecoratedList.css';
 import './DecoratedResult.css';
-import common_css from './common.css';
+import './common.css';
 
 import React from 'react';
 import DecoratedResult from './DecoratedResult';
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
 import json from 'react-syntax-highlighter/dist/esm/languages/hljs/json';
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-github['hljs']['background'] = common_css['--result-background'];
 
 
 const hasCompleteContent = function(message) {
