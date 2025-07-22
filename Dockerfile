@@ -1,5 +1,5 @@
 # build environment
-FROM node:22.14.0-alpine3.21 AS build
+FROM node:24.4.1-alpine3.21 AS build
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ RUN npm run build
 
 
 # production environment
-FROM nginx:1.27.4-alpine
+FROM nginx:1.29.0-alpine
 RUN apk add --no-cache jq
 
 COPY docker-entrypoint.sh /
