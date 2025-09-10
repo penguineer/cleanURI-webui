@@ -66,6 +66,21 @@ docker run --rm \
 
 Note that the default API gateway points at `http://localhost:8080/` and therefore will not be available in the Docker container. Please don't forget to set a working URL for the API Gateway here.
 
+### Run with Docker Compose (Development)
+
+To run with [docker compose](https://docs.docker.com/compose/) copy  [`.env.template`](.env.template) to `.env` and edit the necessary variables. Then start with:
+
+```bash
+docker compose up --build
+```
+
+Please note that this compose file will rebuild the image based on the repository. This is helpful during development and not intended for production use.
+
+When done, please don't forget to remove the deployment with
+```bash
+docker compose down
+```
+
 ### Build with npm
 
 In the project directory, you can run:
