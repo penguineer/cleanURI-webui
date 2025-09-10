@@ -21,7 +21,7 @@ FROM build_amd64 as build
 
 
 # production environment
-FROM nginx:1.29.0-alpine
+FROM nginx:1.29.1-alpine
 RUN apk add --no-cache jq
 
 COPY docker-entrypoint.sh /
