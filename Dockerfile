@@ -1,5 +1,5 @@
 # build environment
-FROM --platform=linux/amd64 node:24.4.1-alpine3.21 AS build_amd64
+FROM --platform=linux/amd64 node:24.7.0-alpine3.21 AS build_amd64
 
 WORKDIR /app
 
@@ -15,13 +15,13 @@ COPY . ./
 RUN npm run build
 
 
-# This is here to satiyfy
+# This is here to satisfy
 # https://docs.docker.com/reference/build-checks/from-platform-flag-const-disallowed/
 FROM build_amd64 as build
 
 
 # production environment
-FROM nginx:1.29.0-alpine
+FROM nginx:1.29.1-alpine
 RUN apk add --no-cache jq
 
 COPY docker-entrypoint.sh /
