@@ -1,0 +1,12 @@
+# Do not forget to create the .env file (see template)
+# before using this container!
+
+services:
+  www:
+    restart: always
+    build: .
+    environment:
+      PORT: $PORT
+      REACT_APP_API_GATEWAY: $REACT_APP_API_GATEWAY
+    ports:
+      - $PORT:80
