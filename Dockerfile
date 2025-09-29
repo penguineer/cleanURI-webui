@@ -1,5 +1,5 @@
 # build environment
-FROM --platform=linux/amd64 node:24.8.0-alpine3.21 AS build_amd64
+FROM --platform=linux/amd64 node:24.9.0-alpine3.21 AS build_amd64
 
 WORKDIR /app
 
