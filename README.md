@@ -1,7 +1,6 @@
 # cleanURI - Web UI
 
-![NodeJS Test](https://github.com/penguineer/cleanURI-webui/actions/workflows/nodejs-test.yml/badge.svg)
-![Docker Image](https://github.com/penguineer/cleanURI-webui/actions/workflows/docker-publish.yml/badge.svg)
+[![Test and Publish](https://github.com/penguineer/cleanURI-webui/actions/workflows/test-and-publish.yml/badge.svg)](https://github.com/penguineer/cleanURI-webui/actions/workflows/test-and-publish.yml)
 
 > This is the Web UI for the [cleanURI](https://github.com/penguineer/cleanURI) service.
 
