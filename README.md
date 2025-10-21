@@ -70,7 +70,7 @@ Note that the default API gateway points at `http://localhost:8080/` and therefo
 To run with [docker compose](https://docs.docker.com/compose/) copy  [`.env.template`](.env.template) to `.env` and edit the necessary variables. Then start with:
 
 ```bash
-docker compose up --build
+docker compose --build --env-file .env up
 ```
 
 Please note that this compose file will rebuild the image based on the repository. This is helpful during development and not intended for production use.
