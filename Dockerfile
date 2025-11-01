@@ -17,7 +17,7 @@ RUN npm run build
 
 # This is here to satisfy
 # https://docs.docker.com/reference/build-checks/from-platform-flag-const-disallowed/
-FROM build_amd64 as build
+FROM build_amd64 AS build
 
 
 # production environment
