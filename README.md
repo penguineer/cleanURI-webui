@@ -18,7 +18,7 @@ Please note that this configuration is not available when the app is run locally
 
 ## Development
 
-The Web UI is based on [React](https://reactjs.org/) and requires [NodeJS](https://nodejs.org/en/) > 14.
+The Web UI is based on [React](https://reactjs.org/) and requires [NodeJS](https://nodejs.org/en/) >= 25.
 Debian packages can either be downloaded on the [NodeJS](https://nodejs.org/en/) website or are available from the backports repository.
 
 
